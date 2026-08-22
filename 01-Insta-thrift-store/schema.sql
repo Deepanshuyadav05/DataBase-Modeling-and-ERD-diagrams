@@ -8,7 +8,7 @@ CREATE TABLE customers (
     created_At timestamp,
     updated_At timestamp
 
-)
+);
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
@@ -18,7 +18,7 @@ CREATE TABLE products (
     created_At timestamp,
     updated_At timestamp
 
-)
+);
 
 CREATE TABLE inventory_items (
     id SERIAL PRIMARY KEY,
@@ -36,7 +36,7 @@ CREATE TABLE inventory_items (
     created_At timestamp,
     updated_At timestamp
 
-)
+);
 
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
@@ -51,7 +51,7 @@ CREATE TABLE orders (
     created_At timestamp,
     updated_At timestamp
 
-)
+);
 
 CREATE TABLE order_items (
     id SERIAL PRIMARY KEY,
@@ -67,7 +67,7 @@ CREATE TABLE order_items (
     created_At timestamp,
     updated_At timestamp
 
-)
+);
 
 CREATE TABLE payments (
     id SERIAL PRIMARY KEY ,
@@ -82,7 +82,7 @@ CREATE TABLE payments (
 
     created_At timestamp,
     updated_At timestamp
-)
+);
 
 CREATE TABLE deliveries (
     id SERIAL PRIMARY KEY ,
@@ -96,4 +96,4 @@ CREATE TABLE deliveries (
 
     created_At timestamp,
     updated_At timestamp
-)
+);

@@ -8,7 +8,7 @@ CREATE TABLE users
 
     createdAt timestamp,
     updatedAt timestamp
-)
+);
 
 CREATE TABLE plans
 (
@@ -20,7 +20,7 @@ CREATE TABLE plans
 
     createdAt timestamp,
     updatedAt timestamp
-)
+);
 
 CREATE TABLE enrollments
 (
@@ -36,9 +36,9 @@ CREATE TABLE enrollments
 
     FOREIGN KEY (client_id) REFERENCES users (id),
     FOREIGN KEY (trainer_id) REFERENCES users (id),
-    FOREIGN KEY (plan_id) REFERENCES plans (id),
+    FOREIGN KEY (plan_id) REFERENCES plans (id)
 
-)
+);
 
 CREATE TABLE sessions
 (
@@ -55,9 +55,9 @@ CREATE TABLE sessions
 
     FOREIGN KEY (client_id) REFERENCES users (id),
     FOREIGN KEY (trainer_id) REFERENCES users (id),
-    FOREIGN KEY (enrollment_id) REFERENCES enrollments(id),
+    FOREIGN KEY (enrollment_id) REFERENCES enrollments(id)
 
-)
+);
 
 CREATE TABLE check_in
 (
@@ -73,9 +73,9 @@ CREATE TABLE check_in
     updatedAt     timestamp,
 
     FOREIGN KEY (enrollment_id) REFERENCES enrollments(id),
-  FOREIGN KEY (client_id) REFERENCES users (id),
+  FOREIGN KEY (client_id) REFERENCES users (id)
 
-)
+);
 
 CREATE TABLE notes
 (
@@ -88,9 +88,9 @@ CREATE TABLE notes
     updatedAt timestamp,
 
     FOREIGN KEY (client_id) REFERENCES users (id),
-    FOREIGN KEY (trainer_id) REFERENCES users (id),
+    FOREIGN KEY (trainer_id) REFERENCES users (id)
 
-)
+);
 
 CREATE TABLE payments
 (
@@ -114,7 +114,7 @@ CREATE TABLE payments
     --if we want to do it without inbuild function then we can do it like this:
     --CHECK ((enrollment_id IS NOT NULL AND session_id IS NULL) OR (enrollment_id IS NULL AND session_id IS NOT NULL))
     CONSTRAINT chk_payment_target CHECK (num_nonnulls(enrollment_id, session_id) = 1)
-)
+);
 
 
 
